@@ -6,8 +6,8 @@
 
     <% if @url %>
       <div>
-        <p class="generated-url"><%= link_to "#{url_url(@url.slug)}", url_path(@url.slug) %></p>
-        <p><%= @url.long_url %></p>
+        <p class="generated-url"><%= link_to "#{url_url(@url.slug)}", url_path(@url.slug), target: :blank %></p>
+        <p>for url: <%= @url.long_url %></p>
       </div>
     <% else %>
       <p>No url provided</p>
