@@ -2,8 +2,19 @@
 
   <div class="home">
 
-    <p>Enter a long URL to convert it into a tiny url</p>
-    <p>(Form goes here)</p>
+    <div class="row">
+
+      <div class="col-12 col-md-6 col-lg-4">
+
+        <%= simple_form_for @url do |f| %>
+          <%= f.input :long_url, label: "Enter a long url to convert it into a shorter url", placeholder: "your long url" %>
+          <%= f.input :alias, label: "Customize your url", placeholder: "your alias" %>
+          <%= f.submit "Shorten my url!", class: "btn btn-primary" %>
+        <% end %>
+
+      </div>
+
+    </div>
 
   </div>
 
