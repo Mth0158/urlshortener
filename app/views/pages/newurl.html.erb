@@ -2,9 +2,18 @@
 
   <div class="newurl">
 
-    <p>Result of your request displayed nicely</p>
-    <p>(Result goes here)</p>
-    <%= link_to 'Convert another tiny url', root_path, class: "btn btn-primary" %>
+    <p>Your shortened url just below:</p>
+
+    <% if @url %>
+      <div>
+        <p class="generated-url"><%= link_to "#{url_url(@url.slug)}", url_path(@url.slug) %></p>
+        <p><%= @url.long_url %></p>
+      </div>
+    <% else %>
+      <p>No url provided</p>
+    <% end %>
+
+    <%= link_to 'Shorten another url', root_path, class: "btn btn-outline-primary" %>
 
   </div>
 
